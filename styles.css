@@ -78,42 +78,63 @@ body {
     background-color: white;
 }
 
-/* Media Query for Small Screens */
+/* Navbar Small Screen Fix */
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        z-index: 1100; /* Ensure hamburger is above content */
+        padding: 10px;
+    }
+
+    .hamburger span {
+        width: 30px;
+        height: 4px;
+        background-color: white;
     }
 
     .nav-links {
         display: flex;
         flex-direction: column;
+        align-items: center; /* Center menu items horizontally */
+        justify-content: center; /* Center menu items vertically */
         background-color: #333;
         position: absolute;
         top: 60px;
         right: 0;
         width: 100%;
-        height: auto; /* Allow it to expand with content */
-        max-height: 90vh; /* Limit the height of the menu to 90% of the viewport height */
-        overflow-y: auto; /* Make the menu scrollable */
+        max-height: 0;
+        overflow: hidden;
         visibility: hidden;
         opacity: 0;
-        transition: opacity 0.3s ease, visibility 0s 0.3s;
+        transition: all 0.5s ease; /* Smooth animation */
     }
 
     .nav-links.active {
+        max-height: 300px; /* Adjust height as needed */
         visibility: visible;
         opacity: 1;
     }
 
     .nav-links li {
-        margin: 10px 0;
+        margin: 15px 0; /* Space between menu items */
     }
 
     .nav-links a {
-        padding: 10px;
+        padding: 10px 20px;
         color: white;
+        font-size: 1.2rem; /* Slightly larger font */
+        text-align: center;
+        transition: color 0.5s;
+    }
+
+    .nav-links a:hover {
+        color: #ffcc00; /* Highlight color */
     }
 }
+
 
 
 
