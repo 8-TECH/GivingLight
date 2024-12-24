@@ -41,6 +41,20 @@ body {
     text-decoration: none;
 }
 
+
+.navbar .logo img {
+    height: 40px; /* Adjust height to fit your design */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline gap issues */
+}
+
+
+@media (max-width: 768px) {
+    .navbar .logo img {
+        height: 35px; /* Slightly smaller for smaller screens */
+    }
+}
+
 .navbar .nav-links {
     display: flex;
     list-style: none;
